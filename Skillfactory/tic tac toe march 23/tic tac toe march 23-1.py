@@ -16,4 +16,3 @@ def show():
         print(f"{i} {row_info}")
 
 show()
-
