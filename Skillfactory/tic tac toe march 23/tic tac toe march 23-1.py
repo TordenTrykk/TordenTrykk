@@ -3,7 +3,7 @@ def greet():
     print("-Welcome to tic tac toe game-")
     print("---------input X and Y------- ")
     print("----X is horisontal line-----")
-    print("------Y is vertical line----- ")
+    print("-----Y is vertical line------ ")
     print("----------------------------- ")
 greet()
 
