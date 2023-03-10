@@ -9,15 +9,15 @@ greet()
 
 field = [[" "] * 3 for i in range(3) ]
 
-def show():
+def showfield():
     print(f"  0 1 2")
     for i in range(3):
         row_info = " ".join(field[i])
         print(f"{i} {row_info}")
 
-show()
+showfield()
 
-def ask():
+def askcords():
     while True:
         cords = input("         Your move: ").split()
         
@@ -43,9 +43,9 @@ def ask():
         
         return x, y
             
-ask()
+askcords()
 
-def check_win():
+def check_winner():
     win_cord = (((0, 0), (0, 1), (0, 2)), ((1, 0), (1, 1), (1, 2)), ((2, 0), (2, 1), (2, 2)),
                 ((0, 2), (1, 1), (2, 0)), ((0, 0), (1, 1), (2, 2)), ((0, 0), (1, 0), (2, 0)),
                 ((0, 1), (1, 1), (2, 1)), ((0, 2), (1, 2), (2, 2)))
@@ -67,27 +67,27 @@ field = [
     [" ", "X", " "]
 ]
 
-check_win()
+check_winner()
 
 greet()
 field = [[" "] * 3 for i in range(3) ]
 count = 0
 while True:
     count += 1
-    show()
+    showfield()
     if count % 2 == 1:
         print(" X to move!")
     else:
         print(" 0 to move!")
     
-    x, y = ask()
+    x, y = askcords()
     
     if count % 2 == 1:
         field[x][y] = "X"
     else:
         field[x][y] = "0"
     
-    if check_win():
+    if check_winner():
         break
     
     if count == 9:
